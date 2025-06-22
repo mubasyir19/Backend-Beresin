@@ -40,7 +40,7 @@ You can see a live demo of this application here:
 
 ## Technologies Used
 
-- **[Main Framework/Library]**: Express
+- **[Main Framework/Library]**: Express Typescript
 - **[Database]**: PostgreSQL
 - **[ORM]**: Prisma
 - **[Others]**: Json Web Token, Prettier, Sonner, Heroicons
@@ -54,8 +54,8 @@ To run this project locally, follow these steps:
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/mubasyir19/Beresin.git
-    cd Beresin
+    git clone https://github.com/mubasyir19/Backend-Beresin.git
+    cd Backend-Beresin
     ```
 
 2.  **Install dependencies:**
@@ -68,35 +68,43 @@ To run this project locally, follow these steps:
     Create a `.env` file in the project root and add the necessary environment variables. Example:
 
     ```
-    NEXT_PUBLIC_API_BERESIN=http://localhost:5000/api
+    DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
+    PORT=5000
+    SECRET_KEY=S3CR3T
     ```
 
 4.  **Run the application:**
     ```bash
     npm run dev
     ```
-    The application will run at `http://localhost:3000`
+    The application will run at `http://localhost:5000/api`
 
 ---
 
 ## Project Structure
 
-├── public/  
+```
+├── prisma/
+│ ├── schema.prisma
 ├── src/
-
-│ ├── app/  
-│ ├── components/  
-│ ├── config/  
-│ ├── helpers/  
-│ ├── hooks/  
-│ ├── services/  
-│ ├── types/  
-│ ├── hooks/  
-│ ├── services/  
-├── .env  
-├── .gitignore  
-├── package.json  
+│ ├── controllers/
+│ | ├── auth/
+│ | ├── comment/
+│ | ├── project/
+│ | ├── task/
+│ | ├── user/
+│ ├── helpers/
+│ ├── middleware/
+│ ├── routes/
+│ ├── types/
+│ ├── app.ts
+├── .env
+├── .gitignore
+├── package-lock.json
+├── package.json
 ├── README.md
+├── tsconfig.json
+```
 
 ---
 
